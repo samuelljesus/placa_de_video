@@ -1,18 +1,12 @@
 <?php
 include 'connect.php';
-$ID =$_get['alterarid'];
-$sql="Select * from placa_de_video where ID=$ID";
-$result= mysqli_query($con,$sql);
-$row=mysqli_fetch_assoc($result);
-$nome=$row['nome'];
-$geracao=$row['geracao'];
-$descricao=$row['descricao'];
-
+$ID=$_GET['alterarid'];
 if(isset($_POST['submit'])){
   $nome=$_POST['nome_da_placa_de_video'];
   $geracao=$_POST['geração_da_placa_de_video'];
   $descricao=$_POST['descrição_da_placa_de_video'];
-  $sql="update placa_de_video set ID=$ID,nome=$nome,geracao=$geracao,descricao=$descricao where ID=$ID";
+
+  $sql="update placa_de_video set ID=$ID,nome='$nome',geracao='$geracao',descricao='$descricao' where ID=$ID";
   $result=mysqli_query($con,$sql);
   if($result){
     header('location:display.php');
@@ -36,19 +30,19 @@ if(isset($_POST['submit'])){
     <label>PLACA DE VÍDEO</label>
     <input type="text" class="form-control" 
      placeholder="Insira o nome da placa de vídeo"
-     name="nome_da_placa_de_video"value=<?php echo $nome;?>>
+     name="nome_da_placa_de_video"value=<?php ?>>
     </div>
     <div class="form-group">
     <label>GERAÇÃO DA PLACA DE VÍDEO</label>
     <input type="text" class="form-control"
      placeholder="Insira a Geração da placa de vídeo"
-     name="geração_da_placa_de_video"value=<?php echo $geracao;?>>
+     name="geração_da_placa_de_video"value=<?php ?>>
     </div>
     <div class="form-group">
     <label>DESCRIÇÃO DA PLACA DE VÍDEO</label>
     <input type="text" class="form-control"
      placeholder="Insira a descrição da placa de vídeo"
-     name="descrição_da_placa_de_video"value=<?php echo $descricao;?>> 
+     name="descrição_da_placa_de_video"value=<?php ?>> 
     </div>
     <button type="submit" class="btn btn-primary" name="submit">Alterar</button>
 </form>

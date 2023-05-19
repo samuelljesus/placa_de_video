@@ -41,8 +41,8 @@ include 'connect.php';
       <td>'.$geracao.'</td>
       <td>'.$descricao.'</td>
       <td>
-      <button class="btn btn-primary"><a href="alterar.php? alterarid='.$ID.'"></a>Alterar</button>
-      <button class="btn btn-danger"><a href="deletar.php? deletaid='.$ID.'"></a>Deletar</button>
+      <button class="btn btn-primary"><a href="alterar.php? alterarid='.$ID.'"class="text-light">Alterar </a></button>
+      <button class="btn btn-danger"><a href="deletar.php? deletaid='.$ID.'"class="text-light">Deletar </a></button>
       </td>
     </tr>';
     }
